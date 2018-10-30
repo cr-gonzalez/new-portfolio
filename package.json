@@ -1,0 +1,33 @@
+{
+  "name": "new-portfolio",
+  "version": "1.0.0",
+  "description": "Crystal Gonzalez developer portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cr-gonzalez/new-portfolio.git"
+  },
+  "keywords": [
+    "crystal",
+    "gonzalez",
+    "portfolio",
+    "github",
+    "projects",
+    "resume"
+  ],
+  "author": "Crystal Gonzalez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "body-parser": "^1.15.2",
+    "pg": "^6.1.2",
+    "express-request-proxy": "^2.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/cr-gonzalez/new-portfolio/issues"
+  },
+  "homepage": "https://github.com/cr-gonzalez/new-portfolio#readme"
+}
