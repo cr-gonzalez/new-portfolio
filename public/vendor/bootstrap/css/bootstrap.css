@@ -4092,8 +4092,8 @@ input[type="button"].btn-block {
     flex-wrap: nowrap;
   }
   .navbar-expand-sm .navbar-collapse {
-    display: -ms-flexbox !important;
-    display: flex !important;
+    display: -ms-flexbox ;
+    display: flex ;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
@@ -4134,8 +4134,8 @@ input[type="button"].btn-block {
     flex-wrap: nowrap;
   }
   .navbar-expand-md .navbar-collapse {
-    display: -ms-flexbox !important;
-    display: flex !important;
+    display: -ms-flexbox ;
+    display: flex ;
     -ms-flex-preferred-size: auto;
     flex-basis: auto;
   }
