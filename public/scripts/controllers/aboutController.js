@@ -6,7 +6,7 @@
 
   aboutController.reveal = () => {
     $('main > div').hide();
-    $('#about').show();
+    $('#about').fadeIn();
   };
 
   module.aboutController = aboutController;

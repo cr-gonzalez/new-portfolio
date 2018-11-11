@@ -3,7 +3,8 @@
 
   githubController.reveal = function() {
     $('main > div').hide();
-    $('#github').fadeIn();
+    // $('#github').fadeIn();
+    repos.requestRepos(githubView.index);
   };
   module.githubController = githubController;
 })(window);

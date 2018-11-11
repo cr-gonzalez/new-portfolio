@@ -21,6 +21,15 @@
     <!-- Custom styles for this template -->
     <link href="vendor/bootstrap/css/resume.min.css" rel="stylesheet">
 
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+      </li>
+    </script>
+
   </head>
 
   <body id="page-top">
@@ -273,8 +282,10 @@
       <section class="tab-content resume-section p-3 p-lg-5 d-flex flex-column">
         <div class="my-auto">
           <h2 class="mb-5">Github Highlights</h2>
+          <ul>
           <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
           <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+        </ul>
         </div>
       </section>
     </div>
@@ -319,6 +330,7 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/handlebars.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
@@ -330,6 +342,8 @@
     <!-- additional scripts -->
     <!-- <script src="/scripts/portfolioview.js"></script> -->
     <script src="/vendor/page.js"></script>
+    <script src="/scripts/model/github.js"></script>
+    <script src="/scripts/view/githubView.js"></script>
     <script src="/scripts/controllers/aboutController.js"></script>
     <script src="/scripts/controllers/educationController.js"></script>
     <script src="/scripts/controllers/experienceController.js"></script>
