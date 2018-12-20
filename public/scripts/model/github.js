@@ -6,7 +6,7 @@
   repos.all = [];
 
   repos.requestRepos = function(callback) {
-    $.get('/github/user/starred?per_page=15&sort=updated')
+    $.get('/github/user/starred?per_page=10&sort=updated')
     .then(data => repos.all = data, err => console.error(err))
     .then(callback);
   };
