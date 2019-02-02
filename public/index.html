@@ -21,6 +21,15 @@
     <!-- Custom styles for this template -->
     <link href="vendor/bootstrap/css/resume.min.css" rel="stylesheet">
 
+    <script id="repo-template" type="text/x-handlebars-template">
+      <li>
+        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+        <p>Description: {{description}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+      </li>
+    </script>
+
   </head>
 
   <body id="page-top">
@@ -36,32 +45,30 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        <ul class="main-nav navbar-nav">
+          <li class="nav-item" data-content="about">
+            <a class="nav-link js-scroll-trigger" href="/">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          <li class="nav-item" data-content="experience">
+            <a class="nav-link js-scroll-trigger" href="/experience">Experience</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          <li class="nav-item" data-content="education">
+            <a class="nav-link js-scroll-trigger" href="/education">Education</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          <li class="nav-item" data-content="skills">
+            <a class="nav-link js-scroll-trigger" href="/skills">Skills</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+          <li class="nav-item" data content="github">
+            <a class="nav-link js-scroll-trigger" href="/github">Github Highlights</a>
           </li>
         </ul>
       </div>
     </nav>
 
     <div class="container-fluid p-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+<main>
+  <div id="about">
+      <section class="tab-content resume-section p-3 p-lg-5 d-flex d-column">
         <div class="my-auto">
           <h1 class="mb-0">Crystal
             <span class="text-primary">Gonzalez</span>
@@ -77,19 +84,32 @@
             <a href="https://www.github.com/cr-gonzalez">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
 
           </div>
         </div>
       </section>
+    </div>
 
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <div id="experience">
+      <section class="tab-content resume-section p-3 p-lg-5 d-flex flex-column">
         <div class="my-auto">
           <h2 class="mb-5">Experience</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Product engineer</h3>
+              <div class="subheading mb-3">Cruise Automation - San Francisco, CA</div>
+              <ul>
+                <li>Troubleshoot and debug autonomous vehicle software and hardware.</li>
+                <li>Test vehicle hardware and monitor software for errors.</li>
+                <li>Complete detailed ride reports and collect data for operations and engineering teams.</li>
+                <li>Install updated codebases onto autonomous vehicles.</li>
+              </ul>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">November 2018 - Present</span>
+            </div>
+          </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
@@ -130,7 +150,7 @@
               </ul>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">July 2010 - December 2011</span>
+              <span class="text-primary">March 2012 - October 2014</span>
             </div>
           </div>
 
@@ -145,7 +165,7 @@
               </ul>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">September 2008 - June 2010</span>
+              <span class="text-primary">March 2012 - October 2014</span>
             </div>
           </div>
 
@@ -153,41 +173,62 @@
 
       </section>
 
-      <hr class="m-0">
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+    </div>
+    <div id="education">
+      <section class="tab-content resume-section p-3 p-lg-5 d-flex flex-column">
         <div class="my-auto">
           <h2 class="mb-5">Education</h2>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">App Academy</h3>
-              <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
+              <h3 class="mb-0">App Academy - San Francisco, CA</h3>
+              <div class="subheading mb-3">Technical Certificate</div>
+              <ul>
+                <li>Graduated top of class from an intensive technically demanding program, focused on full stack web development utilizing the software industry’s most cutting edge technologies.</li>
+                <li>Significant focus on development in Ruby with emphasis on object oriented design.</li>
+                <li>Test-driven development leveraging RSpec and Mocha.</li>
+                <li>Architected high availability databases in SQL. Extensive study in querying, joins and associations, aggregate functions, schema design and use of ActiveRecord. </li>
+                <li>Implementation of rails frameworks including HTTP and API consumption, REST, MVC architecture, basic routing and full user authentication. </li>
+                <li>In depth analysis and implementation of Metaprogramming, request- response lifecycle and advanced concepts of JavaScript.</li>
+                <li>Front end development in JavaScript using React, Redux, interface creation, state management and client side MVC.</li>
+                <li>Full stack project design and architecture, application deployment, API usage, CSS & Bootstrap. </li>
+                <li>Cloud asset management</li>
+                <li>Algorithms, binary search trees, AVL trees and deep exploration of data structures.</li>
+              </ul>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">August 2006 - May 2010</span>
+              <span class="text-primary">February 2018 - May 2018</span>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">James Buchanan High School</h3>
-              <div class="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
+              <h3 class="mb-0">Code Fellows - Seattle, WA</h3>
+              <div class="subheading mb-3">Technical Certificate</div>
+              <ul>
+                <li>Graduated top 5% from the Pacific Northwest’s foremost technical college for software development.</li>
+                <li>Significant focus on coding in Python, using common patterns such as object oriented programming, classes, and functional data manipulation.</li>
+                <li>Practiced test-driven development utilizing Pytest.</li>
+                <li>Implementation of Pyramid and Django frameworks including RESTful API’s, data persistence, MVC structure, and user authentication and authorization.</li>
+                <li>Created secure web apps that deter attackers from exploiting the most common site vulnerabilities.</li>
+                <li>Contributed to existing code bases using version-control tools such as Git and Github.</li>
+                <li>Applied dependency management techniques and built with JavaScript libraries such as NodeJS, Express, and Handlebars.</li>
+                <li>Deployed projects using Heroku and AWS.</li>
+              </ul>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">August 2002 - May 2006</span>
+              <span class="text-primary">April 2016 - October 2016</span>
             </div>
           </div>
 
         </div>
       </section>
 
-      <hr class="m-0">
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+    </div>
+    <div id="skills">
+      <section class="tab-content resume-section p-3 p-lg-5 d-flex flex-column">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
 
@@ -200,7 +241,7 @@
               <i class="fab fa-css3-alt"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-js-square"></i>
+              <i class="fab fa-js"></i>
             </li>
             <li class="list-inline-item">
               <i class="fab fa-angular"></i>
@@ -212,19 +253,16 @@
               <i class="fab fa-node-js"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-sass"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-less"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="fab fa-wordpress"></i>
+              <i class="fab fa-python"></i>
             </li>
             <li class="list-inline-item">
               <i class="fab fa-gulp"></i>
             </li>
             <li class="list-inline-item">
-              <i class="fab fa-grunt"></i>
+              <i class="fab fa-aws"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fab fa-git"></i>
             </li>
             <li class="list-inline-item">
               <i class="fab fa-npm"></i>
@@ -248,57 +286,22 @@
           </ul>
         </div>
       </section>
+    </div>
 
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+    <div id="github">
+      <section class="tab-content resume-section p-3 p-lg-5 d-flex flex-column">
         <div class="my-auto">
-          <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
+          <h2 class="mb-5">Github Highlights</h2>
         </div>
       </section>
-
-      <hr class="m-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Awards &amp; Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005</li>
-          </ul>
-        </div>
-      </section>
+    </div>
+    </main>
 
     </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/handlebars.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
@@ -307,6 +310,18 @@
     <!-- Custom scripts for this template -->
     <script src="vendor/bootstrap/js/resume.min.js"></script>
 
+    <!-- additional scripts -->
+    <!-- <script src="/scripts/portfolioview.js"></script> -->
+    <script src="/vendor/page.js"></script>
+    <script src="/scripts/model/github.js"></script>
+    <script src="/scripts/view/githubView.js"></script>
+    <script src="/scripts/controllers/aboutController.js"></script>
+    <script src="/scripts/controllers/educationController.js"></script>
+    <script src="/scripts/controllers/experienceController.js"></script>
+    <script src="/scripts/controllers/githubController.js"></script>
+    <script src="/scripts/controllers/projectController.js"></script>
+    <script src="/scripts/controllers/skillsController.js"></script>
+    <script src="/scripts/controllers/routes.js"></script>
   </body>
 
 </html>
